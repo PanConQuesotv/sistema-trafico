@@ -1,26 +1,23 @@
-
-import './App.css'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import Inicio from './pages/Inicio';
+import Dashboard from './pages/Dashboard';
+import Arquitectura from './pages/Arquitectura';
+import Simulacion from './pages/Simulacion';
 
 function App() {
-
-
+  
   return (
-    <div className="app"> {/* <-- Cambiado de 'app-container' a 'app' */}
-      <div className="overlay">
-        <h1>Sistema de Tráfico Urbano</h1>
-        <p>
-          Consulta datos reales de tráfico y analiza el comportamiento vehicular en tiempo real.
-        </p>
-        <button
-          className="cta-button"
-          onClick={() => alert("Próximamente: panel de visualización")}
-        >
-          Ver panel de datos
-        </button>
-      </div>
-    </div>
-  )
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/arquitectura" element={<Arquitectura />} />
+        <Route path="/simulacion" element={<Simulacion />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
