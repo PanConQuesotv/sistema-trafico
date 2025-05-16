@@ -69,3 +69,18 @@ html, body {
 .cta-button:hover {
   background-color: #00b342;
 }
+.page-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* Asegura que el layout crezca verticalmente */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
