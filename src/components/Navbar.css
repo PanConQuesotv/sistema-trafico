@@ -1,15 +1,13 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #111;
   padding: 10px 20px;
+  z-index: 1000; /* para que quede encima */
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
+.app {
+  margin-top: 60px; /* para dejar espacio debajo de la navbar fija */
 }
