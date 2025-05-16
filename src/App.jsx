@@ -1,15 +1,22 @@
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import Inicio from './pages/Inicio';
+import Dashboard from './pages/Dashboard';
+import Arquitectura from './pages/Arquitectura';
+import Simulacion from './pages/Simulacion';
 
-
-function Dashboard() {
+function App() {
   return (
-    <div className="app">
-      <div className="overlay">
-        <h1>Tablero de Control</h1>
-        <p>Aquí se visualizarán los datos del tráfico urbano en tiempo real.</p>
-      </div>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/arquitectura" element={<Arquitectura />} />
+        <Route path="/simulacion" element={<Simulacion />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default Dashboard;
+export default App;
