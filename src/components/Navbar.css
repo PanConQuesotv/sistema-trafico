@@ -13,3 +13,12 @@
   color: white;
   text-decoration: none;
 }
+/* Evita desbordamiento horizontal */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Navbar que no empuje el layout */
+.navbar ul {
+  flex-wrap: wrap;
+}

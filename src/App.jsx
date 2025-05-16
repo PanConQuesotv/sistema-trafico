@@ -10,17 +10,17 @@ import Simulacion from './pages/Simulacion';
 function App() {
   return (
     <div className="app">
-      <div className="overlay">
-        <Router>
-          <Navbar />
+      <Router>
+        <Navbar />
+        <div className="overlay">
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/arquitectura" element={<Arquitectura />} />
             <Route path="/simulacion" element={<Simulacion />} />
           </Routes>
-        </Router>
-      </div>
+        </div>
+      </Router>
     </div>
   );
 }
