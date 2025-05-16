@@ -7,7 +7,10 @@ function Inicio() {
         <button
           className="cta-button"
           onClick={() => alert('Próximamente.')}
-        ></button>
+
+        >
+        MostrarSQL 
+        </button>
         
       </div>
     </div>
