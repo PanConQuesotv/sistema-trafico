@@ -11,6 +11,23 @@ html, body, #root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* NAVBAR */
+.navbar {
+  background-color: #111;
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
 /* Fondo y contenedor principal */
 .app {
   height: 100vh;
@@ -35,21 +52,6 @@ html, body, #root {
   max-width: 600px;
 }
 
-/* Botón */
-.cta-button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #00c853;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  color: white;
-  transition: background-color 0.3s ease;
-}
 
-.cta-button:hover {
-  background-color: #00b342;
-}
 
 
