@@ -10,15 +10,13 @@ import Simulacion from './pages/Simulacion';
 function App() {
   return (
     <div className="app">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/arquitectura" element={<Arquitectura />} />
-          <Route path="/simulacion" element={<Simulacion />} />
-        </Routes>
-      </Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/arquitectura" element={<Arquitectura />} />
+        <Route path="/simulacion" element={<Simulacion />} />
+      </Routes>
     </div>
   );
 }
