@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
-  background-color: rgba(17, 17, 17, 0.85);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  background-color: rgb(17, 17, 17);
+  box-shadow: 0 2px 4px rgb(0, 0, 0);
   padding: 20px 0; /* Aumentado de 12px a 20px */
   display: flex;
   justify-content: center;
