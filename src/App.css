@@ -15,7 +15,8 @@ html, body {
 /* NAVBAR */
 .navbar {
   background-color: #111;
-  padding: 10px 20px;
+  padding: 15px 20px;
+  margin-bottom: 20px; /* separa del contenido */
 }
 
 .navbar ul {
@@ -23,22 +24,24 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center; /* centra los links */
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
+  font-size: 1.1rem;
 }
 
 /* Fondo */
 .app {
-  min-height: 100vh;
+  min-height: calc(100vh - 60px); /* ajusta altura menos el navbar */
   width: 100%;
   background-image: url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/3489700/ss_02282b4eb4c8b13129a13908b85840dbf2168644.jpg?t=1747321345');
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -50,7 +53,8 @@ html, body {
   text-align: center;
   color: #fff;
   max-width: 600px;
-  margin-top: 2rem;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* Botón bonito */
