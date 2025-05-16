@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import '../App.css'; // Solo si app.css está en src/
 
 function Navbar() {
   return (
