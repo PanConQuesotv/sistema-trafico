@@ -26,9 +26,11 @@ html, body {
 
 /* NAVBAR centrado horizontalmente */
 .navbar {
-  background-color: #111;
-  padding: 20px 40px; /* Más padding vertical y horizontal */
-  font-size: 1.1rem; /* Un poco más grande el texto */
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
 }
 
 .navbar ul {
