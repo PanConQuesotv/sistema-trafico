@@ -1,25 +1,35 @@
 .navbar {
-  background-color: rgba(17, 17, 17, 0.85);
   width: 100%;
-  padding: 16px 40px;
+  background-color: rgba(17, 17, 17, 0.85);
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.navbar ul {
-  list-style: none;
+  padding: 12px 0;
   display: flex;
   justify-content: center;
-  gap: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.navbar a {
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item a {
   color: #fff;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
+  
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar a:hover {
-  color: #00c853;
+.navbar-item a:hover {
+  background-color: #00c853;
+  color: white;
 }

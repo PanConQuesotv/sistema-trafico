@@ -5,14 +5,13 @@
   box-sizing: border-box;
 }
 
-html, body {
+html, body, #root {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fondo general con flex para centrar todo */
+/* Fondo general app */
 .app {
   min-height: 100vh;
   width: 100%;
@@ -22,35 +21,15 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
 
+/* Overlay para el contenido principal */
+.overlay {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
   border-radius: 12px;
   text-align: center;
   color: #fff;
   max-width: 600px;
-  width: 90%;
-}
-
-
-/* Botón bonito */
-.cta-button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #00c853;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #00b342;
+  margin-top: 2rem;
 }
