@@ -1,23 +1,23 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import Inicio from './pages/Inicio';
-import Dashboard from './pages/Dashboard';
-import Arquitectura from './pages/Arquitectura';
-import Simulacion from './pages/Simulacion';
+import React from 'react';
+import 'App.css';
 
-function App() {
-  
+function Arquitectura() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/arquitectura" element={<Arquitectura />} />
-        <Route path="/simulacion" element={<Simulacion />} />
-      </Routes>
-    </Router>
+    <div className="app">
+      <div className="overlay">
+        <h1>Arquitectura del Sistema</h1>
+        <p>
+          Este sistema está diseñado para recolectar, procesar y visualizar datos de tráfico urbano.
+        </p>
+        <p>
+          El diagrama de arquitectura mostrará cómo los módulos del sistema se comunican entre sí.
+        </p>
+        <button className="cta-button" onClick={() => alert('Aquí se mostrará el diagrama.')}>
+          Ver Diagrama
+        </button>
+      </div>
+    </div>
   );
 }
 
-export default App;
+export default Arquitectura;
