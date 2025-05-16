@@ -1,8 +1,18 @@
+import React from 'react';
+import '../App.css';
+
 function Simulacion() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Simulación de Datos</h1>
-      <p>Generador en tiempo real de datos de tráfico para pruebas.</p>
+    <div className="app">
+      <div className="overlay">
+        <h1>Simulación y generación de datos</h1>
+        <p>
+          Aquí se ejecuta un job simulado que genera datos de tráfico en tiempo real.
+        </p>
+        <button className="cta-button" onClick={() => alert('Simulación iniciada')}>
+          Iniciar simulación
+        </button>
+      </div>
     </div>
   );
 }

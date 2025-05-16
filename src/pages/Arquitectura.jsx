@@ -1,9 +1,18 @@
+import React from 'react';
+import '../App.css';
+
 function Arquitectura() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Arquitectura del Sistema</h1>
-      <p>Este módulo muestra el diseño de la arquitectura del sistema de análisis de tráfico urbano.</p>
-      <img src="/arquitectura.png" alt="Diagrama de arquitectura" style={{ width: '100%', maxWidth: '800px' }} />
+    <div className="app">
+      <div className="overlay">
+        <h1>Arquitectura del Sistema</h1>
+        <p>
+          Esta sección muestra el diagrama y la estructura del sistema de tráfico urbano.
+        </p>
+        <button className="cta-button" onClick={() => alert('Diagrama próximamente')}>
+          Ver Diagrama
+        </button>
+      </div>
     </div>
   );
 }

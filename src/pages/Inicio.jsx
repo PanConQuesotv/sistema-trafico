@@ -1,3 +1,5 @@
+import '../App.css';
+
 function Inicio() {
   return (
     <div className="app">

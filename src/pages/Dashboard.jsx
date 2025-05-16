@@ -1,3 +1,5 @@
+import '../App.css';
+
 function Dashboard() {
   return (
     <div style={{ padding: '2rem', color: '#333' }}>
