@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'; // Asegúrate que este sea el CSS donde definiste `.app`, `.overlay`, etc.
+import '../App.css'; // Asegúrate que este sea el CSS donde definiste `.app`, `.overlay`, etc.
 
 function Arquitectura() {
   return (
