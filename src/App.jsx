@@ -12,14 +12,12 @@ function App() {
     <div className="app">
       <Router>
         <Navbar />
-        <div className="overlay">
-          <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/arquitectura" element={<Arquitectura />} />
-            <Route path="/simulacion" element={<Simulacion />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/arquitectura" element={<Arquitectura />} />
+          <Route path="/simulacion" element={<Simulacion />} />
+        </Routes>
       </Router>
     </div>
   );
