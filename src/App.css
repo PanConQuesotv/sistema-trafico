@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset general */
 * {
   margin: 0;
   padding: 0;
@@ -8,20 +8,34 @@
 html, body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
+  
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* App con fondo */
+.app {
+  min-height: 100vh;
+  background-image: url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/3489700/ss_02282b4eb4c8b13129a13908b85840dbf2168644.jpg?t=1747321345');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
 .navbar {
   background-color: #111;
   padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+
   gap: 20px;
 }
 
@@ -30,43 +44,38 @@ html, body {
   text-decoration: none;
 }
 
-/* Fondo */
-.app {
-  min-height: 100vh;
-  width: 100%;
-  background-image: url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/3489700/ss_02282b4eb4c8b13129a13908b85840dbf2168644.jpg?t=1747321345');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Capa de contenido */
+/* Contenido principal */
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
+  margin: 60px auto; /* espacio superior e inferior */
   border-radius: 12px;
-  text-align: center;
+
   color: #fff;
-  max-width: 600px;
-  margin-top: 2rem;
+  max-width: 800px;
+  width: 90%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Botón bonito */
+/* Botón CTA */
 .cta-button {
   margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #00c853;
+  padding: 12px 20px;
   border: none;
+  background-color: #00b894;
+  color: white;
+  font-size: 1rem;
+
   border-radius: 8px;
   cursor: pointer;
-  color: white;
+
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #00b342;
+  background-color: #019875;
 }
 
