@@ -1,9 +1,8 @@
 .navbar {
   width: 100%;
   background-color: rgba(17, 17, 17, 0.85);
-
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  padding: 12px 0;
+  padding: 20px 0; /* Aumentado de 12px a 20px */
   display: flex;
   justify-content: center;
   position: sticky;
@@ -14,7 +13,7 @@
 .navbar-list {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 40px; /* Un poco más de espacio entre enlaces */
   margin: 0;
   padding: 0;
 }
@@ -23,9 +22,8 @@
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-
-  font-size: 1.1rem;
-  padding: 8px 12px;
+  font-size: 1.3rem; /* Aumentado */
+  padding: 12px 16px; /* Aumentado */
   border-radius: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
