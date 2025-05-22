@@ -76,29 +76,34 @@ background-color: #00a743;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;  /* toda la pantalla */
-  height: 100vh; /* toda la pantalla */
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(10, 10, 10, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  padding: 1rem; /* para que el contenido no esté pegado al borde */
+  padding: 1rem;
   box-sizing: border-box;
 }
+
 
 /* Contenido del overlay */
 .problem-overlay-content {
   background-color: #1f1f1f;
   padding: 2rem;
   border-radius: 12px;
+  width: 100%;
   max-width: 700px;
-  max-height: 80vh; /* máximo 80% del alto ventana */
-  overflow-y: auto; /* scroll si se excede */
+  max-height: 80vh;
+  overflow-y: auto;
   color: #fff;
   position: relative;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 
