@@ -1,51 +1,97 @@
-.problem-container {
-max-width: 900px;
-margin: 6rem auto 4rem auto;
-padding: 2rem;
-background-color: rgba(255, 255, 255, 0.9);
-border-radius: 16px;
-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-backdrop-filter: blur(4px);
+.problem-page {
+padding: 4rem 2rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+color: white;
 }
 
-.problem-container h1 {
+.problem-title {
 font-size: 2.5rem;
-margin-bottom: 1.5rem;
+margin-bottom: 2rem;
+}
+
+.cards-container {
+display: flex;
+gap: 2rem;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.info-card {
+background-color: rgba(0, 0, 0, 0.7);
+border-radius: 12px;
+padding: 1.5rem 2rem;
 text-align: center;
-color: #1a1a1a;
+cursor: pointer;
+box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+width: 260px;
+transition: transform 0.3s ease;
 }
 
-.problem-content {
+.info-card:hover {
+transform: scale(1.05);
+}
+
+.info-card button {
+margin-top: 1rem;
+padding: 0.5rem 1rem;
+background-color: #00c853;
+border: none;
+border-radius: 8px;
+color: white;
+font-weight: bold;
+cursor: pointer;
+}
+
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgba(15, 15, 15, 0.8);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 2000;
+}
+
+.overlay-content {
+background-color: #222;
+color: white;
+padding: 2rem;
+border-radius: 16px;
+max-width: 600px;
+width: 90%;
+max-height: 80vh;
+overflow-y: auto;
+position: relative;
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.close-button {
+position: absolute;
+top: 1rem;
+right: 1rem;
+background: none;
+border: none;
+font-size: 1.5rem;
+color: #ccc;
+cursor: pointer;
+}
+
+.overlay-content h2 {
+font-size: 1.8rem;
+margin-bottom: 1rem;
+}
+
+.overlay-content p, .overlay-content ul {
 font-size: 1.1rem;
-line-height: 1.7;
-color: #333;
+line-height: 1.6;
+margin-bottom: 1rem;
 }
 
-.problem-content p {
-margin-bottom: 1.5rem;
-}
-
-.problem-content ul {
+.overlay-content ul {
 padding-left: 1.5rem;
-margin-top: 0.5rem;
-}
-
-.problem-content li {
-margin-bottom: 0.75rem;
-list-style: disc;
-}
-
-@media (max-width: 768px) {
-.problem-container {
-margin: 4rem 1rem;
-padding: 1.5rem;
-}
-
-.problem-container h1 {
-font-size: 2rem;
-}
-
-.problem-content {
-font-size: 1rem;
-}
 }
