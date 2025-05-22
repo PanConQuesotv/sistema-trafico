@@ -1,46 +1,48 @@
-.problem-container {
+.problem-section {
 padding: 4rem 2rem;
-display: flex;
-flex-direction: column;
-align-items: center;
-background: linear-gradient(to bottom right, #121212, #1e1e1e);
+background-color: #121212;
 color: #fff;
 min-height: 100vh;
 }
 
-/* Título principal */
 .problem-title {
-font-size: 2.5rem;
-margin-bottom: 2rem;
 text-align: center;
+font-size: 2rem;
+margin-bottom: 2rem;
 color: #00c853;
 }
 
-/* Botones para abrir overlays */
-.problem-buttons {
+.card-container {
 display: flex;
-gap: 1.5rem;
-flex-wrap: wrap;
-justify-content: center;
-margin-bottom: 2rem;
+flex-direction: column;
+gap: 2rem;
+align-items: center;
 }
 
-.problem-button {
-background-color: #00c853;
-color: white;
-border: none;
-padding: 0.75rem 1.5rem;
-border-radius: 8px;
-font-size: 1rem;
+.problem-card {
+background-color: #1e1e1e;
+border: 1px solid #333;
+padding: 1.5rem 2rem;
+border-radius: 12px;
 cursor: pointer;
-transition: background-color 0.3s ease;
+transition: transform 0.2s ease;
+max-width: 700px;
+width: 90%;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.problem-button:hover {
-background-color: #00b342;
+.problem-card:hover {
+transform: translateY(-5px);
 }
 
-/* Overlay: fondo oscuro centrado */
+.problem-card h3 {
+font-size: 1.4rem;
+color: #fff;
+margin: 0;
+}
+
+/* Overlay general */
+
 .problem-overlay {
 position: fixed;
 top: 0;
@@ -56,7 +58,8 @@ z-index: 999;
 overflow: auto;
 }
 
-/* Contenedor del contenido del overlay */
+/* Contenido del overlay */
+
 .problem-overlay-content {
 background-color: #1f1f1f;
 padding: 2rem;
@@ -73,23 +76,10 @@ flex-direction: column;
 justify-content: flex-start;
 }
 
-/* Botón para cerrar el overlay */
-.problem-close-button {
-position: absolute;
-top: 12px;
-right: 12px;
-background: transparent;
-color: white;
-font-size: 1.5rem;
-border: none;
-cursor: pointer;
-
-}
-
-/* Texto general dentro del overlay */
 .problem-overlay-content h3 {
-margin-bottom: 1rem;
+margin-top: 0;
 color: #00c853;
+margin-bottom: 1rem;
 }
 
 .problem-overlay-content p {
@@ -98,16 +88,28 @@ margin-bottom: 1rem;
 text-align: justify;
 }
 
+/* Botón de cierre del overlay */
+
+.close-button {
+position: absolute;
+top: 10px;
+right: 15px;
+background: none;
+border: none;
+color: #fff;
+font-size: 1.5rem;
+cursor: pointer;
+}
+
 /* Responsive */
-@media screen and (max-width: 600px) {
-.problem-button {
-width: 100%;
-text-align: center;
-}
 
+@media (max-width: 768px) {
 .problem-overlay-content {
-
-    padding: 1.5rem;
+padding: 1.5rem;
+max-height: 90vh;
 }
 
+.problem-card {
+padding: 1.2rem;
+}
 }
