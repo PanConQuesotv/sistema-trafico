@@ -1,13 +1,13 @@
 /* Problem section container */
 .problem-section {
-min-height: 100vh;
-padding: 4rem 1rem;
-background: linear-gradient(to bottom right, #1b1b1b, #2e2e2e);
-color: #fff;
-display: flex;
-flex-direction: column;
-align-items: center;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 3rem 1rem;
+  background: linear-gradient(to bottom right, #1b1b1b, #2e2e2e);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 2rem;
 }
 
 /* Título */
