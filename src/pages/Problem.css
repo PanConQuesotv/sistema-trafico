@@ -1,45 +1,51 @@
-.problema-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.5);
-}
-
 .problem-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  color: white;
-  
+max-width: 900px;
+margin: 6rem auto 4rem auto;
+padding: 2rem;
+background-color: rgba(255, 255, 255, 0.9);
+border-radius: 16px;
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(4px);
 }
 
-.problem-card {
-  width: 100%;
-  max-width: 500px;
-  background-color: rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
-  border-radius: 10px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.problem-container h1 {
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+text-align: center;
+color: #1a1a1a;
 }
 
-.problem-card:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.problem-content {
+font-size: 1.1rem;
+line-height: 1.7;
+color: #333;
 }
 
-.problem-overlay {
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #111;
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-top: 1rem;
-  max-width: 700px;
-  width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+.problem-content p {
+margin-bottom: 1.5rem;
+}
+
+.problem-content ul {
+padding-left: 1.5rem;
+margin-top: 0.5rem;
+}
+
+.problem-content li {
+margin-bottom: 0.75rem;
+list-style: disc;
+}
+
+@media (max-width: 768px) {
+.problem-container {
+margin: 4rem 1rem;
+padding: 1.5rem;
+}
+
+.problem-container h1 {
+font-size: 2rem;
+}
+
+.problem-content {
+font-size: 1rem;
+}
 }
