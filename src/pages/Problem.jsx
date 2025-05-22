@@ -1,15 +1,24 @@
 import React from 'react';
-import './Problem.css';
 
-const Problem = () => {
+function Problem() {
   return (
-    <div className="problem-section">
+    <div className="app">
       <div className="overlay">
-        <h1>Sección de Problema</h1>
-        <p>Contenido simple dentro del overlay.</p>
+        <h1>Definición del Problema</h1>
+        <p>
+          En las ciudades modernas, la congestión vehicular representa un desafío significativo para la movilidad,
+          especialmente en zonas sensibles como áreas escolares o intersecciones clave.
+        </p>
+        <p>
+          Este sistema tiene como objetivo analizar datos en tiempo real para identificar cuellos de botella
+          y proponer soluciones dinámicas que mejoren el flujo vehicular y la seguridad.
+        </p>
+        <button className="cta-button" onClick={() => alert('Aquí se podría mostrar un caso específico.')}>
+          Ver Ejemplo
+        </button>
       </div>
     </div>
   );
-};
+}
 
 export default Problem;
