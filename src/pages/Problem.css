@@ -1,16 +1,21 @@
 /* Problem section container */
 .problem-section {
   height: 100vh;
-  padding: 3rem 1rem;
-  background: linear-gradient(to bottom right, #1b1b1b, #2e2e2e);
+  padding: 2rem;
+  background: rgba(25, 25, 25, 0.7); /* fondo translúcido */
+  backdrop-filter: blur(8px); /* efecto vidrio */
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente */
-  align-items: center;     /* Centra horizontalmente */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 16px;
 }
 
 /* Título */
