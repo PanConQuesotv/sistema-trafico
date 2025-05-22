@@ -7,24 +7,39 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.problema-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 2.5rem;
-  border-radius: 12px;
-  max-width: 800px;
-  width: 90%;
+.problem-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
   color: white;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  
 }
 
-.problema-overlay h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #00e676;
+.problem-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.problema-overlay p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.problem-card:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.problem-overlay {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #111;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
