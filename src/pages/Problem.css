@@ -1,92 +1,87 @@
-/* Problem section container */
+/* Contenedor principal similar a .overlay */
 .problem-section {
-  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
-  background: rgba(25, 25, 25, 0.7); /* fondo translúcido */
-  backdrop-filter: blur(8px); /* efecto vidrio */
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 4rem auto;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
   box-sizing: border-box;
-  border-radius: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Título */
 .problem-title {
-font-size: 2.5rem;
-margin-bottom: 1rem;
-text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Subtítulo */
 .problem-subtitle {
-font-size: 1.2rem;
-margin-bottom: 3rem;
-max-width: 600px;
-text-align: center;
-color: #ccc;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ccc;
 }
 
-/* Cards contenedor */
+/* Contenedor de las cards */
 .problem-cards {
-display: flex;
-gap: 2rem;
-flex-wrap: wrap;
-justify-content: center;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Cada card */
 .problem-card {
-background-color: rgba(255, 255, 255, 0.08);
-border: 1px solid rgba(255, 255, 255, 0.15);
-border-radius: 12px;
-padding: 2rem;
-width: 250px;
-text-align: center;
-transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: #fff;
 }
 
 .problem-card:hover {
-transform: translateY(-5px);
-background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .problem-card h2 {
-font-size: 1.4rem;
-margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
-.problem-card button {
-background-color: #00c853;
-border: none;
-padding: 0.6rem 1.2rem;
-border-radius: 6px;
-color: white;
-font-weight: bold;
-cursor: pointer;
-transition: background-color 0.3s ease;
+/* Botones igual que .cta-button */
+.problem-card button,
+.problem-close-button {
+  background-color: #00c853;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.problem-card button:hover {
-background-color: #00a743;
+.problem-card button:hover,
+.problem-close-button:hover {
+  background-color: #00b342;
 }
 
-/* Overlay general */
-/* Overlay general */
+/* Overlay (pantalla completa con fondo traslúcido) */
 .problem-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(10, 10, 10, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,51 +90,44 @@ background-color: #00a743;
   box-sizing: border-box;
 }
 
-
-/* Contenido del overlay */
+/* Contenido dentro del overlay */
 .problem-overlay-content {
-  background-color: #1f1f1f;
-  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2rem 3rem;
   border-radius: 12px;
-  width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   max-height: 80vh;
   overflow-y: auto;
   color: #fff;
-  position: relative;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  text-align: left;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.6;
 }
-
 
 /* Botón cerrar */
 .problem-close-button {
-position: absolute;
-top: 12px;
-right: 16px;
-background: none;
-border: none;
-font-size: 1.5rem;
-color: white;
-cursor: pointer;
-transition: color 0.2s ease;
-}
-
-.problem-close-button:hover {
-color: #00c853;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  line-height: 1;
 }
 
 @media screen and (max-width: 768px) {
-.problem-cards {
-flex-direction: column;
-align-items: center;
-}
+  .problem-cards {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.problem-overlay-content {
-max-width: 90%;
-padding: 1.5rem;
-}
+  .problem-overlay-content {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
 }
