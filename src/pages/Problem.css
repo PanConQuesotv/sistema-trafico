@@ -1,97 +1,126 @@
-.problem-page {
-padding: 4rem 2rem;
+.problem-section {
+min-height: 100vh;
+padding: 4rem 1rem;
+background: linear-gradient(to bottom right, #1b1b1b, #2e2e2e);
+color: #fff;
 display: flex;
 flex-direction: column;
 align-items: center;
-color: white;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Título */
 .problem-title {
 font-size: 2.5rem;
-margin-bottom: 2rem;
+margin-bottom: 1rem;
+text-align: center;
 }
 
-.cards-container {
+/* Subtítulo */
+.problem-subtitle {
+font-size: 1.2rem;
+margin-bottom: 3rem;
+max-width: 600px;
+text-align: center;
+color: #ccc;
+}
+
+/* Cards contenedor */
+.problem-cards {
 display: flex;
 gap: 2rem;
 flex-wrap: wrap;
 justify-content: center;
 }
 
-.info-card {
-background-color: rgba(0, 0, 0, 0.7);
+/* Cada card */
+.problem-card {
+background-color: rgba(255, 255, 255, 0.08);
+border: 1px solid rgba(255, 255, 255, 0.15);
 border-radius: 12px;
-padding: 1.5rem 2rem;
+padding: 2rem;
+width: 250px;
 text-align: center;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-width: 260px;
-transition: transform 0.3s ease;
+transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.info-card:hover {
-transform: scale(1.05);
+.problem-card:hover {
+transform: translateY(-5px);
+background-color: rgba(255, 255, 255, 0.12);
 }
 
-.info-card button {
-margin-top: 1rem;
-padding: 0.5rem 1rem;
+.problem-card h2 {
+font-size: 1.4rem;
+margin-bottom: 1rem;
+}
+
+.problem-card button {
 background-color: #00c853;
 border: none;
-border-radius: 8px;
+padding: 0.6rem 1.2rem;
+border-radius: 6px;
 color: white;
 font-weight: bold;
 cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
-.overlay {
+.problem-card button:hover {
+background-color: #00a743;
+}
+
+/* Overlay general */
+.problem-overlay {
 position: fixed;
 top: 0;
 left: 0;
-width: 100vw;
-height: 100vh;
-background-color: rgba(15, 15, 15, 0.8);
+width: 100%;
+height: 100%;
+background-color: rgba(10, 10, 10, 0.8);
 display: flex;
 justify-content: center;
 align-items: center;
-z-index: 2000;
+z-index: 999;
 }
 
-.overlay-content {
-background-color: #222;
-color: white;
+/* Contenido del overlay */
+.problem-overlay-content {
+background-color: #1f1f1f;
 padding: 2rem;
-border-radius: 16px;
-max-width: 600px;
-width: 90%;
+border-radius: 12px;
+max-width: 700px;
 max-height: 80vh;
 overflow-y: auto;
+color: #fff;
 position: relative;
-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.close-button {
+/* Botón cerrar */
+.problem-close-button {
 position: absolute;
-top: 1rem;
-right: 1rem;
+top: 12px;
+right: 16px;
 background: none;
 border: none;
 font-size: 1.5rem;
-color: #ccc;
+color: white;
 cursor: pointer;
+transition: color 0.2s ease;
 }
 
-.overlay-content h2 {
-font-size: 1.8rem;
-margin-bottom: 1rem;
+.problem-close-button:hover {
+color: #00c853;
 }
 
-.overlay-content p, .overlay-content ul {
-font-size: 1.1rem;
-line-height: 1.6;
-margin-bottom: 1rem;
+@media screen and (max-width: 768px) {
+.problem-cards {
+flex-direction: column;
+align-items: center;
 }
 
-.overlay-content ul {
-padding-left: 1.5rem;
+.problem-overlay-content {
+max-width: 90%;
+padding: 1.5rem;
+}
 }
