@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sistema.css';
 
 const pasos = [
@@ -35,13 +35,13 @@ const pasos = [
 ];
 
 function Sistema() {
+  const [activo, setActivo] = useState(null);
+
   return (
     <div className="sistema-page">
-      <div className="sistema-content">
+      <div className="sistema-overlay">
         <h2>Arquitectura del Sistema</h2>
-        <p>
-          Conoce las etapas clave en el desarrollo del sistema de análisis de tráfico urbano basado en datos abiertos.
-        </p>
+        <p>Conoce las etapas clave en el desarrollo del sistema de análisis de tráfico urbano basado en datos abiertos.</p>
 
         <div className="card-grid">
           {pasos.map((paso, index) => (
@@ -49,16 +49,27 @@ function Sistema() {
               className="card"
               key={index}
               style={{ backgroundImage: `url(${paso.imagen})` }}
+              onClick={() => setActivo(paso)}
             >
+              <div className="card-fondo"></div>
               <div className="card-overlay">
                 <h3>{paso.titulo}</h3>
-                <p>{paso.texto}</p>
               </div>
-              <div className="card-fondo"></div>
             </div>
           ))}
         </div>
       </div>
+
+      {activo && (
+        <div className="modal-overlay" onClick={() => setActivo(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setActivo(null)}>×</button>
+            <img src={activo.imagen} alt={activo.titulo} className="modal-img" />
+            <h3>{activo.titulo}</h3>
+            <p>{activo.texto}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
