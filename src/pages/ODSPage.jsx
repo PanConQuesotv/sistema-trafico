@@ -39,15 +39,16 @@ function ODSPanel() {
         ))}
       </div>
 
-      <div className={`ods-panel ${activeOds ? 'open' : ''}`}>
-        {activeOds && (
-          <>
+      {activeOds && (
+        <div className="ods-overlay" onClick={() => setActiveOds(null)}>
+          <div className="ods-modal" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={() => setActiveOds(null)}>×</button>
+            <img src={odsData[activeOds].img} alt={odsData[activeOds].title} className="ods-modal-img" />
             <h3>{odsData[activeOds].title}</h3>
             <p>{odsData[activeOds].text}</p>
-          </>
-        )}
-      </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
