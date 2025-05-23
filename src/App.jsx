@@ -6,7 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import Arquitectura from "./pages/Arquitectura";
 import Simulacion from "./pages/Simulacion";
 import Problem from "./pages/Problem";
-import ODSPage from "./pages/ODSPage"; // <-- Nueva página
+import ODSPage from "./pages/ODSPage"; 
+import Sistema from './pages/Sistema';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/arquitectura" element={<Arquitectura />} />
         <Route path="/simulacion" element={<Simulacion />} />
-        <Route path="/ods" element={<ODSPage />} /> {/* Nueva ruta */}
+        <Route path="/ods" element={<ODSPage />} /> 
+        <Route path="/sistema" element={<Sistema />} />
       </Routes>
     </div>
   );

@@ -11,6 +11,8 @@ function Navbar() {
         <li className="navbar-item"><Link to="/arquitectura">Arquitectura</Link></li>
         <li className="navbar-item"><Link to="/simulacion">Simulación</Link></li>
         <li className="navbar-item"><Link to="/ods">ODS</Link></li>
+        <li className="navbar-item"><Link to="/sistema">Sistema</Link></li>
+
 
 
       </ul>
