@@ -14,7 +14,7 @@ function Problem() {
 
   return (
     <div className="app">
-      <div className="overlay" style={{ maxWidth: '700px' }}>
+      <div className="overlay" style={{ maxWidth: '700px', transition: 'all 0.3s ease', transform: activeBox ? 'translateX(-150px)' : 'none' }}>
         <h1>Definición del Problema</h1>
         <p>
           En las ciudades modernas, la congestión vehicular representa un desafío significativo para la movilidad y la sostenibilidad.
@@ -36,6 +36,14 @@ function Problem() {
               Ver más
             </button>
           </div>
+
+          <div className="box">
+            <h2>Afectación Ambiental</h2>
+            <p>Emisión de CO₂, aumento de ruido y pérdida de tiempo productivo.</p>
+            <button className="cta-button small" onClick={() => handleOpen('effects')}>
+              Ver más
+            </button>
+          </div>
         </div>
       </div>
 
@@ -47,7 +55,7 @@ function Problem() {
               <>
                 <h2>Detalles de la Problemática</h2>
                 <p>
-                  El crecimiento urbano ha incrementado la densidad de vehículos, causando congestión en horas pico. Esto afecta directamente la calidad de vida de los ciudadanos, incrementa los tiempos de traslado y deteriora la salud mental por el estrés diario del tráfico.
+                  La falta de información en tiempo real, los datos dispersos sobre el tráfico y la carencia de herramientas para visualización eficiente del flujo vehicular generan congestión constante.
                 </p>
               </>
             )}
@@ -55,7 +63,15 @@ function Problem() {
               <>
                 <h2>Impacto Ambiental</h2>
                 <p>
-                  La contaminación vehicular es una de las principales fuentes de emisiones de gases nocivos. Esta situación contribuye al cambio climático, deteriora la calidad del aire y genera enfermedades respiratorias, especialmente en zonas con alta densidad poblacional.
+                  La acumulación de vehículos en zonas urbanas incrementa las emisiones de CO₂, los niveles de ruido y afecta negativamente la calidad del aire.
+                </p>
+              </>
+            )}
+            {activeBox === 'effects' && (
+              <>
+                <h2>Consecuencias Directas</h2>
+                <p>
+                  La congestión prolongada provoca emisiones contaminantes (CO₂), contaminación acústica y pérdida de tiempo que podría emplearse en actividades productivas.
                 </p>
               </>
             )}
