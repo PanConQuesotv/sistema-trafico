@@ -42,7 +42,6 @@ function Sistema() {
 
   return (
     <div className="app">
-      {/* Contenedor overlay negro con padding, como en Problema */}
       <div className="overlay">
         <h2>Arquitectura del Sistema</h2>
         <p>Conoce las etapas clave en el desarrollo del sistema de análisis de tráfico urbano basado en datos abiertos.</p>
@@ -68,9 +67,9 @@ function Sistema() {
         <div className="modal-overlay" onClick={closeCard}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={closeCard}>×</button>
-            <img src={pasos[activeCard].imagen} alt="" className="modal-img" />
             <h3>{pasos[activeCard].titulo}</h3>
             <p>{pasos[activeCard].texto}</p>
+            <img src={pasos[activeCard].imagen} alt="" className="modal-img" />
           </div>
         </div>
       )}
