@@ -1,13 +1,15 @@
 .navbar {
-  width: 100%;
+  width: 100vw;
   background-color: rgb(17, 17, 17);
   box-shadow: 0 2px 4px rgb(0, 0, 0);
-  padding: 20px 0; /* Aumentado de 12px a 20px */
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   position: sticky;
   top: 0;
-  z-index: 100;
+  left: 0;
+  z-index: 1000;
+  margin: 0;
 }
 
 .navbar-list {
