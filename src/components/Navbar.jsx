@@ -10,6 +10,7 @@ function Navbar() {
         <li className="navbar-item"><Link to="/dashboard">Dashboard</Link></li>
         <li className="navbar-item"><Link to="/arquitectura">Arquitectura</Link></li>
         <li className="navbar-item"><Link to="/simulacion">Simulación</Link></li>
+        <li className="navbar-item"><Link to="/ODSPanel">Simulación</Link></li>
       </ul>
     </nav>
   );
