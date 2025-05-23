@@ -1,17 +1,24 @@
 .sistema-page {
   min-height: 100vh;
-  background-color: #000; /* fondo base mientras cargan imágenes */
+  background-color: #000;
+  background-image: url("https://www.stellar-blade.com/resources/front/images/post_ms7/22.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: 60px 20px;
+  color: #fff;
   display: flex;
   justify-content: center;
-  align-items: start;
-  color: #fff;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .sistema-content {
   max-width: 1100px;
   width: 100%;
   text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .sistema-content h2 {
@@ -30,6 +37,7 @@
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .card {
@@ -43,6 +51,7 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   cursor: pointer;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .card:hover {
