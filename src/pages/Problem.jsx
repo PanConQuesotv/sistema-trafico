@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Problem.css';
+import './Problem.css'; // este es ProblemBoxes.css renombrado como quieras
 
 function Problem() {
   const [activeBox, setActiveBox] = useState(null);
@@ -14,7 +14,7 @@ function Problem() {
 
   return (
     <div className="app">
-      <div className="overlay" style={{ maxWidth: '700px', transition: 'all 0.3s ease', transform: activeBox ? 'translateX(-150px)' : 'none' }}>
+      <div className={`overlay ${activeBox ? 'shift-left' : ''}`}>
         <h1>Definición del Problema</h1>
         <p>
           En las ciudades modernas, la congestión vehicular representa un desafío significativo para la movilidad y la sostenibilidad.

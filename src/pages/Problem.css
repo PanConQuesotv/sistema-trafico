@@ -1,6 +1,30 @@
-/* ProblemBoxes.css */
+/* Centrado general de la página */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
 
+/* Overlay que contiene el título y las cajas */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
 
+.shift-left {
+  transform: translateX(-150px);
+}
+
+/* Contenedor de cajas */
 .boxes-container {
   display: flex;
   gap: 20px;
@@ -9,13 +33,11 @@
   flex-wrap: wrap;
 }
 
-
 .box {
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 20px;
   width: 280px;
-
   text-align: center;
   color: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
@@ -23,10 +45,10 @@
 }
 
 .box:hover {
-
   transform: translateY(-5px);
 }
 
+/* Botón */
 .cta-button.small {
   margin-top: 12px;
   padding: 8px 16px;
@@ -43,6 +65,7 @@
   background-color: #00b342;
 }
 
+/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -58,7 +81,6 @@
   box-sizing: border-box;
 }
 
-
 .modal-content {
   background-color: rgba(0, 0, 0, 0.95);
   color: #fff;
@@ -73,7 +95,6 @@
   line-height: 1.6;
 }
 
-
 .close-btn {
   position: absolute;
   top: 15px;
@@ -85,14 +106,13 @@
   font-weight: bold;
   cursor: pointer;
   transition: color 0.3s ease;
-
 }
 
 .close-btn:hover {
   color: #00c853;
 }
 
-
+/* Responsivo */
 @media (max-width: 700px) {
   .boxes-container {
     flex-direction: column;
@@ -105,6 +125,10 @@
 
   .modal-content {
     max-width: 90%;
+    padding: 20px;
+  }
+
+  .overlay {
     padding: 20px;
   }
 }
