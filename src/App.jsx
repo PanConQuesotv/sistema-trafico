@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Arquitectura from "./pages/Arquitectura";
 import Simulacion from "./pages/Simulacion";
 import Problem from "./pages/Problem"; // <-- Importa el componente nuevo
+import ODSPanel from "./pages/ODSPanel";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/arquitectura" element={<Arquitectura />} />
         <Route path="/simulacion" element={<Simulacion />} />
-        <Route path="/problem" element={<Problem />} /> {/* Nueva ruta */}
+        <Route path="/problem" element={<Problem />} />
+        <Route path="/ODS" element={<ODSPanel />} />
       </Routes>
     </div>
   );
