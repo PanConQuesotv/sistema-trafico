@@ -1,98 +1,108 @@
+/* Página principal */
 .sistema-page {
-width: 100%;
-min-height: 100vh;
-display: flex;
-justify-content: center;
-padding: 60px 20px;
-box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  background: #0a0a0a;
 }
 
+/* Contenedor principal */
 .sistema-content {
-background-color: rgba(0, 0, 0, 0.6); /* mismo estilo que .overlay en App.css */
-backdrop-filter: blur(4px);
-padding: 40px;
-border-radius: 12px;
-color: white;
-max-width: 1000px;
-width: 100%;
-text-align: center;
-box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 40px;
+  border-radius: 12px;
+  color: white;
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
 .sistema-content h2 {
-font-size: 2.2rem;
-margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
 .sistema-content p {
-font-size: 1.1rem;
-margin-bottom: 30px;
-color: #ddd;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #ddd;
 }
 
+/* Grid de tarjetas */
 .card-grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
+/* Tarjeta individual */
 .card {
-position: relative;
-width: 280px;
-height: 220px;
-border-radius: 20px;
-overflow: hidden;
-cursor: pointer;
-background-image: url("https://www.stellar-blade.com/resources/front/images/post_ms7/22.jpg");
-background-size: cover;
-background-position: center;
-transition: transform 0.3s ease;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-flex-shrink: 0;
+  position: relative;
+  width: 280px;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .card:hover {
-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
+/* Capa oscura sobre la imagen */
 .card-fondo {
-position: absolute;
-top: 0;
-left: 0;
-height: 100%;
-width: 100%;
-background-color: rgba(0, 0, 0, 0.4);
-backdrop-filter: blur(2px);
-z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
+/* Overlay con información visible siempre */
 .card-overlay {
-position: absolute;
-z-index: 2;
-top: 0;
-left: 0;
-height: 100%;
-width: 100%;
-padding: 20px;
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
-background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, transparent 100%);
-color: white;
-border-radius: 20px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 50%, transparent 100%);
+  color: white;
+  border-radius: 20px;
+  transition: background 0.3s ease;
 }
 
 .card-overlay h3 {
-margin-bottom: 10px;
-color: #00c853;
+  margin-bottom: 10px;
+  color: #00c853;
 }
 
 .card-overlay p {
-font-size: 0.95rem;
-color: #ddd;
+  font-size: 0.95rem;
+  color: #ddd;
+  transition: opacity 0.3s ease;
 }
 
-body {
-overflow-x: hidden; /* asegura que no se genere scroll horizontal */
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
 }

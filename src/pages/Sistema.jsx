@@ -39,7 +39,9 @@ function Sistema() {
     <div className="sistema-page">
       <div className="sistema-content">
         <h2>Arquitectura del Sistema</h2>
-        <p>Conoce las etapas clave en el desarrollo del sistema de análisis de tráfico urbano basado en datos abiertos.</p>
+        <p>
+          Conoce las etapas clave en el desarrollo del sistema de análisis de tráfico urbano basado en datos abiertos.
+        </p>
 
         <div className="card-grid">
           {pasos.map((paso, index) => (
