@@ -5,17 +5,17 @@ const odsData = {
   ods9: {
     title: 'ODS 9: Industria, innovación e infraestructura',
     text: 'Nuestro sistema fomenta el uso de tecnologías innovadoras para optimizar la movilidad urbana, alineándose con el desarrollo de infraestructuras sostenibles e inteligentes.',
-    img: 'https://sdgs.un.org/sites/default/files/2023-09/goal-9.png'
+    img: 'https://www.un.org/sustainabledevelopment/wp-content/uploads/sites/3/2015/09/S_SDG_Icons-01-09.jpg'
   },
   ods11: {
     title: 'ODS 11: Ciudades y comunidades sostenibles',
     text: 'Contribuye a una mejor gestión del tránsito urbano, reduciendo tiempos de traslado y promoviendo ciudades más habitables y organizadas.',
-    img: 'https://sdgs.un.org/sites/default/files/2023-09/goal-11.png'
+    img: 'https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2016/01/S_SDG_Icons-01-11.jpg'
   },
   ods13: {
     title: 'ODS 13: Acción por el clima',
     text: 'La disminución de la congestión reduce las emisiones de gases de efecto invernadero, contribuyendo a la mitigación del cambio climático.',
-    img: 'https://sdgs.un.org/sites/default/files/2023-09/goal-13.png'
+    img: 'https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2016/01/S_SDG_Icons-01-13.jpg'
   }
 };
 
