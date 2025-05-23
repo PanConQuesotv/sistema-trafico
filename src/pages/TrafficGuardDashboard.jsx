@@ -87,126 +87,244 @@ const TrafficGuardDashboard = () => {
     }));
 
   return (
-    <div style={{ maxWidth: 1200, margin: 'auto', padding: 20, fontFamily: "'Roboto', sans-serif" }}>
-      <header style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20, alignItems: 'center' }}>
-        <h1 style={{ color: '#1976d2' }}>TrafficGuard - Análisis de Tráfico Urbano</h1>
-        <div>
-          <select style={{ padding: 8, marginRight: 10, borderRadius: 4, border: '1px solid #ddd' }}>
-            <option value="bogota">Bogotá</option>
-            <option value="medellin">Medellín</option>
-            <option value="cali">Cali</option>
-          </select>
-          <select style={{ padding: 8, borderRadius: 4, border: '1px solid #ddd' }}>
-            <option value="24h">Últimas 24h</option>
-            <option value="semana">Esta semana</option>
-            <option value="mes">Este mes</option>
-            <option value="ano">Este año</option>
-          </select>
-        </div>
-      </header>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 20,
+        minHeight: '100vh',
+        fontFamily: "'Roboto', sans-serif",
+        backgroundColor: '#f5f5f5',
+      }}
+    >
+      <div style={{ maxWidth: 1200, width: '100%' }}>
+        <header
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginBottom: 20,
+            alignItems: 'center',
+          }}
+        >
+          <h1 style={{ color: '#1976d2' }}>TrafficGuard - Análisis de Tráfico Urbano</h1>
+          <div>
+            <select
+              style={{
+                padding: 8,
+                marginRight: 10,
+                borderRadius: 4,
+                border: '1px solid #ddd',
+              }}
+            >
+              <option value="bogota">Bogotá</option>
+              <option value="medellin">Medellín</option>
+              <option value="cali">Cali</option>
+            </select>
+            <select
+              style={{ padding: 8, borderRadius: 4, border: '1px solid #ddd' }}
+            >
+              <option value="24h">Últimas 24h</option>
+              <option value="semana">Esta semana</option>
+              <option value="mes">Este mes</option>
+              <option value="ano">Este año</option>
+            </select>
+          </div>
+        </header>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 20 }}>
-        {/* Mapa */}
-        <section style={{ borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.1)', backgroundColor: 'white', padding: 15, height: 500 }}>
-          <h2 style={{ color: '#1976d2' }}>Mapa de Zonas</h2>
-          <MapContainer center={[4.711, -74.072]} zoom={12} style={{ height: '420px', borderRadius: 8 }}>
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {zones.map((zone) => (
-              <CircleMarker
-                key={zone.name}
-                center={zone.coords}
-                radius={15}
-                pathOptions={{ color: getColorByCO2(zone.co2), fillOpacity: 0.7 }}
-                eventHandlers={{
-                  click: () => {
-                    setSelectedZone(zone.name);
-                  },
+        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 20 }}>
+          {/* Mapa */}
+          <section
+            style={{
+              borderRadius: 8,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              backgroundColor: 'white',
+              padding: 15,
+              height: 500,
+            }}
+          >
+            <h2 style={{ color: '#1976d2' }}>Mapa de Zonas</h2>
+            <MapContainer
+              center={[4.711, -74.072]}
+              zoom={12}
+              style={{ height: '420px', borderRadius: 8 }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {zones.map((zone) => (
+                <CircleMarker
+                  key={zone.name}
+                  center={zone.coords}
+                  radius={15}
+                  pathOptions={{ color: getColorByCO2(zone.co2), fillOpacity: 0.7 }}
+                  eventHandlers={{
+                    click: () => {
+                      setSelectedZone(zone.name);
+                    },
+                  }}
+                >
+                  <Popup>
+                    <strong>{zone.name}</strong>
+                    <br />
+                    Tiempo perdido: {zone.timeLost} min
+                    <br />
+                    CO2: {zone.co2} ppm
+                    <br />
+                    Congestión: {zone.congestion}%
+                  </Popup>
+                </CircleMarker>
+              ))}
+            </MapContainer>
+          </section>
+
+          {/* Métricas */}
+          <section
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 15,
+            }}
+          >
+            <div
+              style={{
+                backgroundColor: 'white',
+                padding: 15,
+                borderRadius: 8,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                textAlign: 'center',
+              }}
+            >
+              <h3>Tiempo perdido total</h3>
+              <p
+                style={{
+                  fontSize: 28,
+                  fontWeight: 'bold',
+                  margin: 10,
                 }}
               >
-                <Popup>
-                  <strong>{zone.name}</strong>
-                  <br />
-                  Tiempo perdido: {zone.timeLost} min
-                  <br />
-                  CO2: {zone.co2} ppm
-                  <br />
-                  Congestión: {zone.congestion}%
-                </Popup>
-              </CircleMarker>
-            ))}
-          </MapContainer>
-        </section>
+                {totalTimeLost} min
+              </p>
+              <p style={{ color: '#f44336' }}>↑ 15% vs promedio</p>
+            </div>
+            <div
+              style={{
+                backgroundColor: 'white',
+                padding: 15,
+                borderRadius: 8,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                textAlign: 'center',
+              }}
+            >
+              <h3>Emisiones CO2 promedio</h3>
+              <p
+                style={{
+                  fontSize: 28,
+                  fontWeight: 'bold',
+                  margin: 10,
+                }}
+              >
+                {avgCO2} ppm
+              </p>
+              <p style={{ color: '#fbc02d' }}>Nivel moderado</p>
+            </div>
+            <div
+              style={{
+                backgroundColor: 'white',
+                padding: 15,
+                borderRadius: 8,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                textAlign: 'center',
+              }}
+            >
+              <h3>Congestión promedio</h3>
+              <p
+                style={{
+                  fontSize: 28,
+                  fontWeight: 'bold',
+                  margin: 10,
+                }}
+              >
+                {avgCongestion} %
+              </p>
+              <p style={{ color: '#388e3c' }}>Estado aceptable</p>
+            </div>
+            <div
+              style={{
+                backgroundColor: 'white',
+                padding: 15,
+                borderRadius: 8,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                textAlign: 'center',
+              }}
+            >
+              <h3>Velocidad promedio</h3>
+              <p
+                style={{
+                  fontSize: 28,
+                  fontWeight: 'bold',
+                  margin: 10,
+                }}
+              >
+                35 km/h
+              </p>
+              <p style={{ color: '#1976d2' }}>Flujo moderado</p>
+            </div>
+          </section>
+        </div>
 
-        {/* Métricas */}
-        <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 15 }}>
-          <div style={{ backgroundColor: 'white', padding: 15, borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.1)', textAlign: 'center' }}>
-            <h3>Tiempo perdido total</h3>
-            <p style={{ fontSize: 28, fontWeight: 'bold', margin: 10 }}>{totalTimeLost} min</p>
-            <p style={{ color: '#f44336' }}>↑ 15% vs promedio</p>
-          </div>
-          <div style={{ backgroundColor: 'white', padding: 15, borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.1)', textAlign: 'center' }}>
-            <h3>Emisiones CO2 promedio</h3>
-            <p style={{ fontSize: 28, fontWeight: 'bold', margin: 10 }}>{avgCO2} ppm</p>
-            <p style={{ color: '#fbc02d' }}>Nivel moderado</p>
-          </div>
-          <div style={{ backgroundColor: 'white', padding: 15, borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.1)', textAlign: 'center' }}>
-            <h3>Congestión promedio</h3>
-            <p style={{ fontSize: 28, fontWeight: 'bold', margin: 10 }}>{avgCongestion} %</p>
-            <p style={{ color: '#388e3c' }}>Estado aceptable</p>
-          </div>
-          <div style={{ backgroundColor: 'white', padding: 15, borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.1)', textAlign: 'center' }}>
-            <h3>Velocidad promedio</h3>
-            <p style={{ fontSize: 28, fontWeight: 'bold', margin: 10 }}>35 km/h</p>
-            <p style={{ color: '#1976d2' }}>Flujo moderado</p>
-          </div>
-        </section>
-      </div>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '2fr 1fr',
+            gap: 20,
+            marginTop: 30,
+          }}
+        >
+          {/* Gráfico tiempo perdido */}
+          <section
+            style={{
+              backgroundColor: 'white',
+              borderRadius: 8,
+              padding: 15,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              height: 300,
+            }}
+          >
+            <h2 style={{ color: '#1976d2' }}>Tendencia de Tiempo Perdido</h2>
+            <Line data={timeLostTrend} options={{ maintainAspectRatio: false, responsive: true }} />
+          </section>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 20, marginTop: 30 }}>
-        {/* Gráfico tiempo perdido */}
-        <section style={{ backgroundColor: 'white', borderRadius: 8, padding: 15, boxShadow: '0 2px 8px rgba(0,0,0,0.1)', height: 300 }}>
-          <h2 style={{ color: '#1976d2' }}>Tendencia de Tiempo Perdido</h2>
-          <Line data={timeLostTrend} options={{ maintainAspectRatio: false, responsive: true }} />
-        </section>
+          {/* Gráfico CO2 */}
+          <section
+            style={{
+              backgroundColor: 'white',
+              borderRadius: 8,
+              padding: 15,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              height: 300,
+            }}
+          >
+            <h2 style={{ color: '#1976d2' }}>Tendencia de Emisiones CO2</h2>
+            <Bar data={co2Trend} options={{ maintainAspectRatio: false, responsive: true }} />
+          </section>
+        </div>
 
-        {/* Gráfico CO2 */}
-        <section style={{ backgroundColor: 'white', borderRadius: 8, padding: 15, boxShadow: '0 2px 8px rgba(0,0,0,0.1)', height: 300 }}>
-          <h2 style={{ color: '#1976d2' }}>Emisiones de CO2</h2>
-          <Bar data={co2Trend} options={{ maintainAspectRatio: false, responsive: true }} />
-        </section>
-      </div>
-
-      {/* Alertas */}
-      <section style={{ marginTop: 30, backgroundColor: 'white', padding: 15, borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-        <h2 style={{ color: '#d32f2f' }}>Alertas Recientes</h2>
-        {alerts.length === 0 ? (
-          <p>No hay alertas recientes</p>
-        ) : (
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '2px solid #ddd' }}>
-                <th style={{ textAlign: 'left', padding: '10px' }}>Fecha</th>
-                <th style={{ textAlign: 'left', padding: '10px' }}>Zona</th>
-                <th style={{ textAlign: 'left', padding: '10px' }}>Tipo</th>
-                <th style={{ textAlign: 'left', padding: '10px' }}>Severidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              {alerts.map((alert, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
-                  <td style={{ padding: '10px' }}>{alert.date}</td>
-                  <td style={{ padding: '10px' }}>{alert.zone}</td>
-                  <td style={{ padding: '10px' }}>{alert.type}</td>
-                  <td style={{ padding: '10px', color: '#d32f2f', fontWeight: 'bold' }}>{alert.severity}</td>
-                </tr>
+        {/* Alertas */}
+        <section style={{ marginTop: 30 }}>
+          <h2 style={{ color: '#1976d2' }}>Alertas</h2>
+          {alerts.length === 0 && <p>No hay alertas recientes.</p>}
+          {alerts.length > 0 && (
+            <ul>
+              {alerts.map((alert, idx) => (
+                <li key={idx} style={{ marginBottom: 10 }}>
+                  <strong>{alert.zone}</strong>: {alert.type} (Severidad: {alert.severity}) - {alert.date}
+                </li>
               ))}
-            </tbody>
-          </table>
-        )}
-      </section>
+            </ul>
+          )}
+        </section>
+      </div>
     </div>
   );
 };
