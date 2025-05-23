@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ODSPanel.css';
+import './ODSPage.css';
 
 const odsData = {
   ods9: {
