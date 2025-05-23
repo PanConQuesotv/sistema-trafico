@@ -35,10 +35,13 @@ const pasos = [
 ];
 
 function Sistema() {
-  const [activo, setActivo] = useState(null);
+  const [activeCard, setActiveCard] = useState(null);
+
+  const openCard = (index) => setActiveCard(index);
+  const closeCard = () => setActiveCard(null);
 
   return (
-    <div className="sistema-page">
+    <div className="sistema-wrapper">
       <div className="sistema-overlay">
         <h2>Arquitectura del Sistema</h2>
         <p>Conoce las etapas clave en el desarrollo del sistema de análisis de tráfico urbano basado en datos abiertos.</p>
@@ -49,24 +52,24 @@ function Sistema() {
               className="card"
               key={index}
               style={{ backgroundImage: `url(${paso.imagen})` }}
-              onClick={() => setActivo(paso)}
+              onClick={() => openCard(index)}
             >
-              <div className="card-fondo"></div>
               <div className="card-overlay">
                 <h3>{paso.titulo}</h3>
               </div>
+              <div className="card-fondo"></div>
             </div>
           ))}
         </div>
       </div>
 
-      {activo && (
-        <div className="modal-overlay" onClick={() => setActivo(null)}>
+      {activeCard !== null && (
+        <div className="modal-overlay" onClick={closeCard}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setActivo(null)}>×</button>
-            <img src={activo.imagen} alt={activo.titulo} className="modal-img" />
-            <h3>{activo.titulo}</h3>
-            <p>{activo.texto}</p>
+            <button className="close-btn" onClick={closeCard}>×</button>
+            <img src={pasos[activeCard].imagen} alt="" className="modal-img" />
+            <h3>{pasos[activeCard].titulo}</h3>
+            <p>{pasos[activeCard].texto}</p>
           </div>
         </div>
       )}
