@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ProblemBoxes.css';  // Importa los estilos específicos
+import './Problem.css';  // Importa los estilos específicos
 
 function Problem() {
   const [activeBox, setActiveBox] = useState(null);
