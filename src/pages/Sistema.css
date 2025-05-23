@@ -1,11 +1,13 @@
 /* Contenedor de la página */
 .sistema-wrapper {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; /* garantiza altura completa del viewport */
   padding: 60px 20px;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* nuevo: asegura crecimiento vertical */
+  justify-content: flex-start;
+  align-items: center; /* centra horizontalmente */
 }
 
 /* Caja negra central */
