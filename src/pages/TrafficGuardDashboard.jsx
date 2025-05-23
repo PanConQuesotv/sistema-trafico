@@ -327,6 +327,7 @@ const TrafficGuardDashboard = () => {
       </div>
     </div>
   );
+  
 };
 
 export default TrafficGuardDashboard;
