@@ -41,8 +41,9 @@ function Sistema() {
   const closeCard = () => setActiveCard(null);
 
   return (
-    <div className="sistema-wrapper">
-      <div className="sistema-overlay">
+    <div className="app">
+      {/* Contenedor overlay negro con padding, como en Problema */}
+      <div className="overlay">
         <h2>Arquitectura del Sistema</h2>
         <p>Conoce las etapas clave en el desarrollo del sistema de análisis de tráfico urbano basado en datos abiertos.</p>
 
@@ -54,10 +55,10 @@ function Sistema() {
               style={{ backgroundImage: `url(${paso.imagen})` }}
               onClick={() => openCard(index)}
             >
+              <div className="card-fondo"></div>
               <div className="card-overlay">
                 <h3>{paso.titulo}</h3>
               </div>
-              <div className="card-fondo"></div>
             </div>
           ))}
         </div>
