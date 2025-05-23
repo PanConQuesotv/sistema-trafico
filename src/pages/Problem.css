@@ -20,10 +20,6 @@
   transition: transform 0.3s ease;
 }
 
-.shift-left {
-  transform: translateX(-150px);
-}
-
 /* Contenedor de cajas */
 .boxes-container {
   display: flex;
