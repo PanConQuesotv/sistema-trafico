@@ -126,26 +126,34 @@ const TrafficGuardDashboard = () => {
                 </CircleMarker>
               ))}
             </MapContainer>
+          
           </section>
+          
+          <section className="metrics-vertical">
+          <div>
+          <h3>Tiempo perdido total</h3>
+          <p className="metric-value">210 min</p>
+          <p className="metric-sub">↑ 15% vs promedio</p>
+        </div>
+        <div>
+          <h3>Emisiones CO₂ promedio</h3>
+          <p className="metric-value">65 ppm</p>
+    <     p className="metric-sub">Nivel moderado</p>
+        </div>
+        <div>
+    
+    
+    <h3>Congestión promedio</h3>
+    <p className="metric-value">57 %</p>
+    <p className="metric-sub">Estado aceptable</p>
+  </div>
+  <div>
+    <h3>Velocidad promedio</h3>
+    <p className="metric-value">35 km/h</p>
+    <p className="metric-sub">Flujo moderado</p>
+  </div>
+</section>
 
-          <section className="dashboard-card metrics">
-            <div>
-              <h3>Tiempo perdido total</h3>
-              <p>{totalTimeLost} min</p>
-            </div>
-            <div>
-              <h3>CO2 promedio</h3>
-              <p>{avgCO2} ppm</p>
-            </div>
-            <div>
-              <h3>Congestión promedio</h3>
-              <p>{avgCongestion} %</p>
-            </div>
-            <div>
-              <h3>Velocidad promedio</h3>
-              <p>35 km/h</p>
-            </div>
-          </section>
         </div>
 
         <div className="dashboard-grid">
