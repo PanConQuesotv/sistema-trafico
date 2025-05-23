@@ -1,93 +1,64 @@
-/* Contenedor de la página */
-.sistema-wrapper {
-  width: 100%;
-  min-height: 100vh; /* garantiza altura completa del viewport */
-  padding: 60px 20px;
-  box-sizing: border-box;
+/* Centrado general de la página */
+.app {
   display: flex;
-  flex-direction: column; /* nuevo: asegura crecimiento vertical */
-  justify-content: flex-start;
-  align-items: center; /* centra horizontalmente */
-}
-
-/* Caja negra central */
-.sistema-overlay {
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: 40px;
-  border-radius: 12px;
-  color: white;
-  max-width: 1000px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-}
-
-.sistema-overlay h2 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
-
-.sistema-overlay p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #ddd;
-}
-
-/* Tarjetas */
-.card-grid {
-  display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 30px;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
-.card {
-  position: relative;
-  width: 280px;
-  height: 200px;
-  border-radius: 20px;
-  overflow: hidden;
-  cursor: pointer;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+/* Overlay que contiene el título y las cajas */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   transition: transform 0.3s ease;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card-fondo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
-  z-index: 1;
-}
-
-.card-overlay {
-  position: absolute;
-  z-index: 2;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  padding: 20px;
+/* Contenedor de cajas */
+.boxes-container {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, transparent 100%);
-  color: white;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.card-overlay h3 {
-  margin-bottom: 10px;
-  color: #00c853;
-  font-size: 1.1rem;
+.box {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+/* Botón */
+.cta-button.small {
+  margin-top: 12px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background-color: #00c853;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button.small:hover {
+  background-color: #00b342;
 }
 
 /* Modal */
@@ -97,7 +68,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.75);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,13 +89,6 @@
   overflow-y: auto;
   max-height: 80vh;
   line-height: 1.6;
-  text-align: center;
-}
-
-.modal-img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 20px;
 }
 
 .close-btn {
@@ -146,7 +110,12 @@
 
 /* Responsivo */
 @media (max-width: 700px) {
-  .card {
+  .boxes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
     width: 90%;
   }
 
@@ -155,7 +124,7 @@
     padding: 20px;
   }
 
-  .sistema-overlay {
+  .overlay {
     padding: 20px;
   }
 }
