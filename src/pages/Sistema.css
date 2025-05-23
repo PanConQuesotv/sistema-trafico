@@ -1,20 +1,14 @@
-/* Contenedor principal */
+/* Contenedor de la página */
 .sistema-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   min-height: 100vh;
   padding: 60px 20px;
   box-sizing: border-box;
-  background-image: url('https://www.stellar-blade.com/resources/front/images/post_ms7/22.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
 }
 
-/* Overlay */
+/* Caja negra central */
 .sistema-overlay {
   background-color: rgba(0, 0, 0, 0.75);
   padding: 40px;
