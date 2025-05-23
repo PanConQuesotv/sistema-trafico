@@ -1,12 +1,20 @@
-.sistema-page {
-  width: 100%;
+/* Contenedor principal */
+.sistema-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   padding: 60px 20px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
+  background-image: url('https://www.stellar-blade.com/resources/front/images/post_ms7/22.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+/* Overlay */
 .sistema-overlay {
   background-color: rgba(0, 0, 0, 0.75);
   padding: 40px;
@@ -30,6 +38,7 @@
   color: #ddd;
 }
 
+/* Tarjetas */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -139,6 +148,7 @@
   color: #00c853;
 }
 
+/* Responsivo */
 @media (max-width: 700px) {
   .card {
     width: 90%;
