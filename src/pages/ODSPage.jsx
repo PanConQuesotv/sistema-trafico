@@ -19,32 +19,41 @@ const odsData = {
   }
 };
 
-function ODSPanel() {
+function ODSPage() {
   const [activeOds, setActiveOds] = useState(null);
 
-  return (
-    <div className="ods-section">
-      <h2>Relación con los Objetivos de Desarrollo Sostenible (ODS)</h2>
-      <p>Conoce cómo nuestro sistema contribuye al cumplimiento de los ODS definidos por la ONU.</p>
+  const handleOpen = (key) => setActiveOds(key);
+  const handleClose = () => setActiveOds(null);
 
-      <div className="ods-icons">
-        {Object.entries(odsData).map(([key, ods]) => (
-          <img
-            key={key}
-            src={ods.img}
-            alt={ods.title}
-            className="ods-icon"
-            onClick={() => setActiveOds(key)}
-          />
-        ))}
+  return (
+    <div className="app">
+      <div className="overlay">
+        <h1>Relación con los Objetivos de Desarrollo Sostenible (ODS)</h1>
+        <p>Conoce cómo nuestro sistema contribuye al cumplimiento de los ODS definidos por la ONU.</p>
+
+        <div className="ods-icons-container">
+          {Object.entries(odsData).map(([key, ods]) => (
+            <div 
+              key={key} 
+              className="ods-box" 
+              onClick={() => handleOpen(key)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={e => { if(e.key === 'Enter') handleOpen(key)}}
+            >
+              <img src={ods.img} alt={ods.title} className="ods-icon" />
+              <h3>{ods.title}</h3>
+            </div>
+          ))}
+        </div>
       </div>
 
       {activeOds && (
-        <div className="ods-overlay" onClick={() => setActiveOds(null)}>
-          <div className="ods-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setActiveOds(null)}>×</button>
-            <img src={odsData[activeOds].img} alt={odsData[activeOds].title} className="ods-modal-img" />
-            <h3>{odsData[activeOds].title}</h3>
+        <div className="modal-overlay" onClick={handleClose}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <button className="close-btn" onClick={handleClose}>×</button>
+            <img src={odsData[activeOds].img} alt={odsData[activeOds].title} className="modal-img" />
+            <h2>{odsData[activeOds].title}</h2>
             <p>{odsData[activeOds].text}</p>
           </div>
         </div>
@@ -53,4 +62,4 @@ function ODSPanel() {
   );
 }
 
-export default ODSPanel;
+export default ODSPage;
