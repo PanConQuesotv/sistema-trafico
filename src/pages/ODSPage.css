@@ -3,9 +3,13 @@
   width: 100%;
   max-width: 1000px;
   margin: 60px auto;
-  padding: 20px;
+  padding: 40px;
   text-align: center;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);  /* Fondo oscuro translúcido */
+  border-radius: 12px;
+  backdrop-filter: blur(4px);             /* Suaviza el fondo */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); /* Profundidad */
 }
 
 .ods-section h2 {
