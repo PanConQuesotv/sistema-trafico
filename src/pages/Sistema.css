@@ -89,7 +89,7 @@
 
 .card-overlay h3 {
   margin-bottom: 10px;
-  color: #00c853;
+  color: #ffffff;
   font-size: 1.1rem;
 }
 
@@ -144,7 +144,7 @@
 }
 
 .close-btn:hover {
-  color: #00c853;
+  color: #ffffff;
 }
 
 /* Responsivo */
