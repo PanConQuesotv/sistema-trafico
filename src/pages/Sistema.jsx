@@ -25,7 +25,7 @@ const pasos = [
   {
     titulo: '5. Proceso ETL',
     texto: 'Se diseña un flujo de extracción, transformación y carga para automatizar el procesamiento de datos.',
-    imagen: 'https://i.ibb.co/6c38c8zK/Job.jp'
+    imagen: 'https://i.ibb.co/6c38c8zK/Job.jpg'
   },
   {
     titulo: '6. Maqueta e Interfaz',
