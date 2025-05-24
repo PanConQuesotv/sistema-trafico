@@ -9,9 +9,11 @@ function Simulacion() {
         <p>
           Aquí se ejecuta un job simulado que genera datos de tráfico en tiempo real.
         </p>
-        <button className="cta-button" onClick={() => alert('Simulación iniciada')}>
-          Iniciar simulación
-        </button>
+        <div className="image-gallery">
+          <img src="https://i.ibb.co/sdrKX1Yj/0101010101.jpg" alt="Simulación paso 1" />
+          <img src="https://i.ibb.co/Kc7FP88j/020202020202002.jpg" alt="Simulación paso 2" />
+          <img src="https://i.ibb.co/nsKjj3sc/0303030303030.jpg" alt="Simulación paso 3" />
+        </div>
       </div>
     </div>
   );
