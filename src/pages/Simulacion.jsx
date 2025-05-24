@@ -28,15 +28,15 @@ function Simulacion() {
             <ul className="job-list">
               <li>
                 <img src="https://i.ibb.co/sdrKX1Yj/0101010101.jpg" alt="Job 1" />
-                <p>Job 1: Generación sintética de datos de tráfico desde sensores simulados.</p>
+
               </li>
               <li>
                 <img src="https://i.ibb.co/Kc7FP88j/020202020202002.jpg" alt="Job 2" />
-                <p>Job 2: Validación de integridad y limpieza de los datos recibidos.</p>
+
               </li>
               <li>
                 <img src="https://i.ibb.co/nsKjj3sc/0303030303030.jpg" alt="Job 3" />
-                <p>Job 3: Carga en la base de datos y actualización del dashboard en tiempo real.</p>
+
               </li>
             </ul>
           </div>
