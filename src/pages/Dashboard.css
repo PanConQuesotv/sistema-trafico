@@ -14,19 +14,23 @@
 
 .dashboard-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* evita que los elementos bajen */
   gap: 32px;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 40px; /* separación inferior para separar de dashboard-grid */
+  height: 500px;
+  align-items: stretch;
 }
 
 .map-panel {
   flex: 1;
   min-width: 300px;
+  height: 100%;
 }
 
 .map {
-  height: 300px;
+  height: 100%;
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
@@ -38,6 +42,7 @@
   gap: 20px;
   justify-content: space-between;
   min-width: 250px;
+  height: 100%;
 }
 
 .metric-value {
@@ -55,41 +60,25 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
-  margin-top: 40px;
+  margin-top: 80px; /* más espacio entre métricas y gráficos */
 }
 
 .dashboard-card {
-  position: relative;
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 24px;
   border-radius: 12px;
   color: #fff;
-  
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  overflow: hidden; /* para que el ::before quede dentro */
-}
-
-.dashboard-card::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* top, right, bottom, left = 0 */
-  background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
-  border-radius: 12px;
-  z-index: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
-
-.dashboard-card > * {
-  position: relative;
-  z-index: 1; /* texto encima sin blur */
-}
-
 
 .alerts table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.alerts th, .alerts td {
+.alerts th,
+.alerts td {
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 8px;
   text-align: left;
@@ -121,36 +110,4 @@
 .overlay::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-}
-.dashboard-row {
-  display: flex;
-  /* quitar flex-wrap para que no baje el mapa o métricas */
-  flex-wrap: nowrap;
-  gap: 32px;
-  justify-content: center;
-  margin-top: 20px;
-  height: 500px; /* altura fija, ajusta según te guste */
-  align-items: stretch; /* que los hijos se estiren verticalmente */
-}
-
-.map-panel {
-  flex: 1;
-  min-width: 300px;
-  height: 100%; /* que tome toda la altura del padre */
-}
-
-.map {
-  height: 100%; /* toma toda la altura del contenedor map-panel */
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.metrics-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: space-between;
-  min-width: 250px;
-  height: 100%; /* para que se estire igual que el mapa */
 }
