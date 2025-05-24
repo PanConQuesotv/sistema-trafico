@@ -139,105 +139,106 @@ const TrafficGuardDashboard = () => {
   
 
 return (
+  <div className="app">
+    <div className="overlay">
+      <h1>TrafficGuard - Análisis de Tráfico Urbano</h1>
 
-<div className="app"> <div className="overlay"> <h1>TrafficGuard - Análisis de Tráfico Urbano</h1>
-
-
-
-  <div className="dashboard-row">
-    <section className="map-panel">
-      <h2>Mapa de Zonas</h2>
-      <MapContainer center={[4.711, -74.072]} zoom={12} className="map">
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {zones.map((zone) => (
-          <CircleMarker
-            key={zone.name}
-            center={zone.coords}
-            radius={15}
-            pathOptions={{ color: getColorByCO2(zone.co2), fillOpacity: 0.7 }}
-            eventHandlers={{ click: () => setSelectedZone(zone.name) }}
-          >
-            <Popup>
-              <strong>{zone.name}</strong><br />
-              Tiempo perdido: {zone.timeLost} min<br />
-              CO2: {zone.co2} ppm<br />
-              Congestión: {zone.congestion}%
-            </Popup>
-          </CircleMarker>
-        ))}
-      </MapContainer>
-    </section>
-
-    <section className="metrics-vertical">
-      <div>
-        <h3>Tiempo perdido total</h3>
-        <p className="metric-value">{totalTimeLost} min</p>
-        <p className="metric-sub">↑ 15% vs promedio</p>
-      </div>
-      <div>
-        <h3>Emisiones CO₂ promedio</h3>
-        <p className="metric-value">{avgCO2} ppm</p>
-        <p className="metric-sub">Nivel moderado</p>
-      </div>
-      <div>
-        <h3>Congestión promedio</h3>
-        <p className="metric-value">{avgCongestion} %</p>
-        <p className="metric-sub">Estado aceptable</p>
-      </div>
-      <div>
-        <h3>Velocidad promedio</h3>
-        <p className="metric-value">35 km/h</p>
-        <p className="metric-sub">Flujo moderado</p>
-      </div>
-    </section>
-  </div>
-
-  <div className="dashboard-grid">
-    <section className="dashboard-card">
-      <h3>Tendencia Tiempo Perdido</h3>
-      <Line data={timeLostTrend} />
-    </section>
-
-    <section className="dashboard-card alerts">
-      <h3>Alertas</h3>
-      {alerts.length === 0 ? (
-        <p>No hay alertas críticas.</p>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Zona</th>
-              <th>Tipo</th>
-              <th>Fecha</th>
-            </tr>
-          </thead>
-          <tbody>
-            {alerts.map((alert, idx) => (
-              <tr key={idx}>
-                <td>{alert.zone}</td>
-                <td>{alert.type}</td>
-                <td>{alert.date}</td>
-              </tr>
+      {/* Bloque superior: Mapa + Métricas */}
+      <div className="dashboard-row">
+        <section className="map-panel">
+          <h2>Mapa de Zonas</h2>
+          <MapContainer center={[4.711, -74.072]} zoom={12} className="map">
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {zones.map((zone) => (
+              <CircleMarker
+                key={zone.name}
+                center={zone.coords}
+                radius={15}
+                pathOptions={{ color: getColorByCO2(zone.co2), fillOpacity: 0.7 }}
+                eventHandlers={{ click: () => setSelectedZone(zone.name) }}
+              >
+                <Popup>
+                  <strong>{zone.name}</strong><br />
+                  Tiempo perdido: {zone.timeLost} min<br />
+                  CO2: {zone.co2} ppm<br />
+                  Congestión: {zone.congestion}%
+                </Popup>
+              </CircleMarker>
             ))}
-          </tbody>
-        </table>
-      )}
-    </section>
+          </MapContainer>
+        </section>
+
+        <section className="metrics-vertical">
+          <div>
+            <h3>Tiempo perdido total</h3>
+            <p className="metric-value">{totalTimeLost} min</p>
+            <p className="metric-sub">↑ 15% vs promedio</p>
+          </div>
+          <div>
+            <h3>Emisiones CO₂ promedio</h3>
+            <p className="metric-value">{avgCO2} ppm</p>
+            <p className="metric-sub">Nivel moderado</p>
+          </div>
+          <div>
+            <h3>Congestión promedio</h3>
+            <p className="metric-value">{avgCongestion} %</p>
+            <p className="metric-sub">Estado aceptable</p>
+          </div>
+          <div>
+            <h3>Velocidad promedio</h3>
+            <p className="metric-value">35 km/h</p>
+            <p className="metric-sub">Flujo moderado</p>
+          </div>
+        </section>
+      </div>
+
+      {/* Bloque inferior: Tendencia + Alertas */}
+      <div className="dashboard-grid">
+        <section className="dashboard-card">
+          <h3>Tendencia Tiempo Perdido</h3>
+          <Line data={timeLostTrend} />
+        </section>
+
+        <section className="dashboard-card alerts">
+          <h3>Alertas</h3>
+          {alerts.length === 0 ? (
+            <p>No hay alertas críticas.</p>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th>Zona</th>
+                  <th>Tipo</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                {alerts.map((alert, idx) => (
+                  <tr key={idx}>
+                    <td>{alert.zone}</td>
+                    <td>{alert.type}</td>
+                    <td>{alert.date}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </section>
+      </div>
+
+      {/* Bloque final: Emisiones CO2 por Hora */}
+      <section className="dashboard-card" style={{ marginTop: '40px' }}>
+        <h3>Emisiones CO₂ por Hora</h3>
+        <Bar data={co2Trend} />
+      </section>
+
+    </div>
   </div>
+);
 
-  <section className="dashboard-card">
-    <h3>Emisiones CO₂ por Hora</h3>
-    <Bar data={co2Trend} />
-  </section>
-</div>
-</div>
-
-
-
-  );
 };
 
 export default TrafficGuardDashboard;
