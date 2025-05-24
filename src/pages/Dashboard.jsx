@@ -142,19 +142,7 @@ return (
 
 <div className="app"> <div className="overlay"> <h1>TrafficGuard - Análisis de Tráfico Urbano</h1>
 
-  <div className="dashboard-header">
-    <select>
-      <option value="bogota">Bogotá</option>
-      <option value="medellin">Medellín</option>
-      <option value="cali">Cali</option>
-    </select>
-    <select>
-      <option value="24h">Últimas 24h</option>
-      <option value="semana">Esta semana</option>
-      <option value="mes">Este mes</option>
-      <option value="ano">Este año</option>
-    </select>
-  </div>
+
 
   <div className="dashboard-row">
     <section className="map-panel">
