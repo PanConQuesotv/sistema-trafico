@@ -149,12 +149,77 @@ const TrafficGuardDashboard = () => {
       </div>
     </section>
   </div>
-
   
+
 return (
 
 <div className="app"> <div className="overlay"> <h1>TrafficGuard - Análisis de Tráfico Urbano</h1>
-  {/* Gráficas y alertas */}
+
+  <div className="dashboard-header">
+    <select>
+      <option value="bogota">Bogotá</option>
+      <option value="medellin">Medellín</option>
+      <option value="cali">Cali</option>
+    </select>
+    <select>
+      <option value="24h">Últimas 24h</option>
+      <option value="semana">Esta semana</option>
+      <option value="mes">Este mes</option>
+      <option value="ano">Este año</option>
+    </select>
+  </div>
+
+  <div className="dashboard-row">
+    <section className="map-panel">
+      <h2>Mapa de Zonas</h2>
+      <MapContainer center={[4.711, -74.072]} zoom={12} className="map">
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {zones.map((zone) => (
+          <CircleMarker
+            key={zone.name}
+            center={zone.coords}
+            radius={15}
+            pathOptions={{ color: getColorByCO2(zone.co2), fillOpacity: 0.7 }}
+            eventHandlers={{ click: () => setSelectedZone(zone.name) }}
+          >
+            <Popup>
+              <strong>{zone.name}</strong><br />
+              Tiempo perdido: {zone.timeLost} min<br />
+              CO2: {zone.co2} ppm<br />
+              Congestión: {zone.congestion}%
+            </Popup>
+          </CircleMarker>
+        ))}
+      </MapContainer>
+    </section>
+
+    <section className="metrics-vertical">
+      <div>
+        <h3>Tiempo perdido total</h3>
+        <p className="metric-value">{totalTimeLost} min</p>
+        <p className="metric-sub">↑ 15% vs promedio</p>
+      </div>
+      <div>
+        <h3>Emisiones CO₂ promedio</h3>
+        <p className="metric-value">{avgCO2} ppm</p>
+        <p className="metric-sub">Nivel moderado</p>
+      </div>
+      <div>
+        <h3>Congestión promedio</h3>
+        <p className="metric-value">{avgCongestion} %</p>
+        <p className="metric-sub">Estado aceptable</p>
+      </div>
+      <div>
+        <h3>Velocidad promedio</h3>
+        <p className="metric-value">35 km/h</p>
+        <p className="metric-sub">Flujo moderado</p>
+      </div>
+    </section>
+  </div>
+
   <div className="dashboard-grid">
     <section className="dashboard-card">
       <h3>Tendencia Tiempo Perdido</h3>
@@ -193,8 +258,10 @@ return (
     <Bar data={co2Trend} />
   </section>
 </div>
+</div>
 
-    </div>
+
+
   );
 };
 
