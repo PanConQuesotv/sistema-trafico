@@ -12,6 +12,7 @@ function Navbar() {
         <li className="navbar-item"><Link to="/simulacion">Simulación</Link></li>
         <li className="navbar-item"><Link to="/ods">ODS</Link></li>
         <li className="navbar-item"><Link to="/sistema">Sistema</Link></li>
+                <li className="navbar-item"><Link to="/PowerBIReport">PowerBIReport</Link></li>
 
 
 

@@ -1,0 +1,28 @@
+.powerbi-page {
+  min-height: 100vh;
+  background-image: url('https://www.stellar-blade.com/resources/front/images/post_ms7/22.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 1200px;
+  width: 90%;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.iframe-wrapper {
+  margin-top: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}

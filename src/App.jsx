@@ -8,6 +8,7 @@ import Simulacion from "./pages/Simulacion";
 import Problem from "./pages/Problem";
 import ODSPage from "./pages/ODSPage"; 
 import Sistema from './pages/Sistema';
+import Sistema from './pages/PowerBIReport';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/simulacion" element={<Simulacion />} />
         <Route path="/ods" element={<ODSPage />} /> 
         <Route path="/sistema" element={<Sistema />} />
+        <Route path="/PowerBIReport" element={<PowerBIReport />} />
       </Routes>
     </div>
   );
