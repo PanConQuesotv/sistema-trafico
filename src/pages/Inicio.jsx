@@ -15,14 +15,6 @@ function Inicio() {
           En esta sección se describe la estructura SQL del sistema, incluyendo el diseño relacional de la base de datos y consultas utilizadas para el análisis de tráfico vehicular.
         </p>
 
-        <div className="sql-image-container">
-          <img
-            src="https://i.ibb.co/LhYBL03S/r-ELACIONAL.jpg"
-            alt="Modelo Relacional SQL"
-            className="sql-image"
-          />
-        </div>
-
         <button className="cta-button" onClick={openModal}>
           Ver Detalle SQL
         </button>
