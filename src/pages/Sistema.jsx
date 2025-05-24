@@ -20,7 +20,7 @@ const pasos = [
   {
     titulo: '4. Gráficas en Power BI',
     texto: 'Se visualizan indicadores claves como volumen vehicular, congestión, picos horarios, etc.',
-    imagen: 'https://drive.usercontent.google.com/download?id=1df7YxGn4xtyfA_4Wem1EBZgXiCr4BST_&export=view&authuser=0'
+    imagen: 'https://ibb.co/5gB9D0Tn'
   },
   {
     titulo: '5. Proceso ETL',
