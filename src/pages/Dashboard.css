@@ -59,13 +59,30 @@
 }
 
 .dashboard-card {
-  background-color: rgba(255, 255, 255, 0.05);
+  position: relative;
   padding: 24px;
   border-radius: 12px;
   color: #fff;
-  backdrop-filter: blur(5px);
+  
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  overflow: hidden; /* para que el ::before quede dentro */
 }
+
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top, right, bottom, left = 0 */
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.dashboard-card > * {
+  position: relative;
+  z-index: 1; /* texto encima sin blur */
+}
+
 
 .alerts table {
   width: 100%;
