@@ -105,3 +105,35 @@
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
+.dashboard-row {
+  display: flex;
+  /* quitar flex-wrap para que no baje el mapa o métricas */
+  flex-wrap: nowrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 20px;
+  height: 500px; /* altura fija, ajusta según te guste */
+  align-items: stretch; /* que los hijos se estiren verticalmente */
+}
+
+.map-panel {
+  flex: 1;
+  min-width: 300px;
+  height: 100%; /* que tome toda la altura del padre */
+}
+
+.map {
+  height: 100%; /* toma toda la altura del contenedor map-panel */
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.metrics-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  min-width: 250px;
+  height: 100%; /* para que se estire igual que el mapa */
+}

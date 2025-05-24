@@ -82,19 +82,6 @@ const TrafficGuardDashboard = () => {
       date: '2025-05-23',
     }));
 
-  <div className="dashboard-header">
-    <select>
-      <option value="bogota">Bogotá</option>
-      <option value="medellin">Medellín</option>
-      <option value="cali">Cali</option>
-    </select>
-    <select>
-      <option value="24h">Últimas 24h</option>
-      <option value="semana">Esta semana</option>
-      <option value="mes">Este mes</option>
-      <option value="ano">Este año</option>
-    </select>
-  </div>
 
   {/* Mapa + Métricas verticales */}
   <div className="dashboard-row">
