@@ -17,3 +17,4 @@ function PowerBIReport() {
     </div>
   );
 }
+export default PowerBIReport;
