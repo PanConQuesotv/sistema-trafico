@@ -8,7 +8,7 @@ import Simulacion from "./pages/Simulacion";
 import Problem from "./pages/Problem";
 import ODSPage from "./pages/ODSPage"; 
 import Sistema from './pages/Sistema';
-import Sistema from './pages/PowerBIReport';
+import PowerBIReport from './pages/PowerBIReport';
 
 function App() {
   return (
