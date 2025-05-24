@@ -17,3 +17,4 @@ function PowerBIReport() {
   );
 }
 
+export default PowerBIReport;
