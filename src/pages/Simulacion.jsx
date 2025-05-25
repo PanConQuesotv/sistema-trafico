@@ -46,4 +46,5 @@ function Simulacion() {
   );
 }
 
+
 export default Simulacion;
